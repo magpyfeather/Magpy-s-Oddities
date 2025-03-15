@@ -769,7 +769,7 @@ SMODS.Joker {
 	if context.end_of_round and not context.blueprint and not context.repetition and not context.individual then
 		if card.ability.extra.level < 13 then
 			card.ability.extra.level = card.ability.extra.level + 1
-			card.ability.extra.level_text = level
+			card.ability.extra.level_text = card.ability.extra.level
 			if card.ability.extra.level == 11 then
 				card.ability.extra.level_text = "Jack"
 			end
