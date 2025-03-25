@@ -563,7 +563,7 @@ SMODS.Joker {
 			end
 		end
 	end
-	-- leftmost becomes polychrome
+	-- leftmost becomes foil
 	if context.selling_self and card.ability.extra.counter == 2 and not (context.retrigger_joker or context.blueprint) then
 		local eligiblejokers = {}
 		for k, v in pairs(G.jokers.cards) do
@@ -581,13 +581,8 @@ SMODS.Joker {
 	end
   end,
   set_ability = function(self, card, initial, delay_sprites)
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                card:set_edition({ polychrome = true }, true)
-                return true
-            end
-        }))
-    end,
+    card:set_edition({polychrome = true}, true)
+  end
 }
 
 SMODS.Joker {
@@ -622,7 +617,7 @@ SMODS.Joker {
 			end
 		end
 	end
-	-- leftmost becomes negative
+	-- leftmost becomes foil
 	if context.selling_self and card.ability.extra.counter == 2 and not (context.retrigger_joker or context.blueprint) then
 		local eligiblejokers = {}
 		for k, v in pairs(G.jokers.cards) do
@@ -640,13 +635,8 @@ SMODS.Joker {
 	end
   end,
   set_ability = function(self, card, initial, delay_sprites)
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                card:set_edition({ negative = true }, true)
-                return true
-            end
-        }))
-    end,
+    card:set_edition({negative = true}, true)
+  end
 }
 
 SMODS.Joker {
